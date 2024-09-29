@@ -19,7 +19,7 @@
 
 # Overview
 
-
+ A first set of experiments on introspective exploration. 
 
 This is a fork of [MaxText](https://github.com/AI-Hypercomputer/maxtext), Google's fastest and most feature-complete LLM implementation.
 
