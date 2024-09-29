@@ -32,8 +32,6 @@ Contrary to the upstream repository, we use `uv`. This means, all you have to do
 uv sync
 ```
 
-[comment]: # TODO: check whether we should be running pre-commit in the gpu case
-
 After installation is completed, run training with the command on synthetic data:
 
 ```
