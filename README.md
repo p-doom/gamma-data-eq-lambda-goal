@@ -19,22 +19,12 @@
 
 # Overview
 
-MaxText is a **high performance**, **highly scalable**, **open-source** LLM written in pure Python/Jax and targeting Google Cloud TPUs and GPUs for **training** and **inference**. MaxText achieves [high MFUs](#runtime-performance-results) and scales from single host to very large clusters while staying simple and "optimization-free" thanks to the power of Jax and the XLA compiler.
 
-MaxText aims to be a launching off point for ambitious LLM projects both in research and production. We encourage users to start by experimenting with MaxText out of the box and then fork and modify MaxText to meet their needs.
 
-We have used MaxText to [demonstrate high-performance, well-converging training in int8](https://cloud.google.com/blog/products/compute/accurate-quantized-training-aqt-for-tpu-v5e) and [scale training to ~51K chips](https://cloud.google.com/blog/products/compute/the-worlds-largest-distributed-llm-training-job-on-tpu-v5e).
-
-Key supported features:
-* TPUs and GPUs (in preview)
-* Training and Inference (in preview)
-* Models: Llama2, Mistral and Gemma
+This is a fork of [MaxText](https://github.com/AI-Hypercomputer/maxtext), Google's fastest and most feature-complete LLM implementation.
 
 # Getting Started
 
-We recommend starting with a single host first and then moving to multihost.
-
-### Environment setup
 We need to pin python to 3.10 since `tensorflow-text` does not seem to support `python 3.12`.
 
 Contrary to the upstream repository, we use `uv`. This means, all you have to do is:
@@ -67,6 +57,6 @@ python3 MaxText/decode.py MaxText/configs/base.yml \
 Failed to execute XLA Runtime executable: run time error: custom call 'xla.gpu.all_reduce' failed: external/xla/xla/service/gpu/nccl_utils.cc:297: NCCL operation ncclCommInitRank(&comm, nranks, id, rank) failed: unhandled cuda error (run with NCCL_DEBUG=INFO for details); current tracing scope: all-reduce-start.2; current profiling annotation: XlaModule:#hlo_module=jit__unnamed_wrapped_function_,program_id=7#.
 ```
 
-## Getting Starting: Preflight Optimizations
+## Preflight Optimizations
 
 Once you've gotten workloads running, there are important optimizations you might want to put on your cluster. Please check the doc [PREFLIGHT.md](https://github.com/google/maxtext/blob/main/PREFLIGHT.md)
