@@ -51,12 +51,3 @@ python3 MaxText/decode.py MaxText/configs/base.yml \
   base_output_directory=gs://<my-bucket> \
   per_device_batch_size=1  
 ```
-
-* If you see the following error when running inside a container, set a larger `--shm-size` (e.g. `--shm-size=1g`)
-```
-Failed to execute XLA Runtime executable: run time error: custom call 'xla.gpu.all_reduce' failed: external/xla/xla/service/gpu/nccl_utils.cc:297: NCCL operation ncclCommInitRank(&comm, nranks, id, rank) failed: unhandled cuda error (run with NCCL_DEBUG=INFO for details); current tracing scope: all-reduce-start.2; current profiling annotation: XlaModule:#hlo_module=jit__unnamed_wrapped_function_,program_id=7#.
-```
-
-## Preflight Optimizations
-
-Once you've gotten workloads running, there are important optimizations you might want to put on your cluster. Please check the doc [PREFLIGHT.md](https://github.com/google/maxtext/blob/main/PREFLIGHT.md)
