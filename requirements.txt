@@ -1,4 +1,4 @@
-jax>=0.4.30
+jax[cuda12]>=0.4.30
 jaxlib>=0.4.30
 orbax-checkpoint>=0.5.21
 absl-py
